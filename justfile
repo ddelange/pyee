@@ -150,7 +150,7 @@ _clean-build:
 
 # Tag the release in git
 tag:
-  . ./venv/bin/activate && git tag -a "v$(python3 -c 'import toml; print(toml.load(open("pyproject.toml", "r"))["project"]["version"])')" -m "Release $(python3 -c 'import toml; print(toml.load(open("pyproject.toml", "r"))["project"]["version"])')"
+  . ./venv/bin/activate && git tag -a "v$(python3 -c 'import tomllib; print(tomllib.load(open("pyproject.toml", "rb"))["project"]["version"])')" -m "Release $(python3 -c 'import tomllib; print(tomllib.load(open("pyproject.toml", "rb"))["project"]["version"])')"
 
 # Upload built packages
 upload:
